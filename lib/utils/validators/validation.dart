@@ -21,7 +21,7 @@ class TValidator {
 
     if(value.length < 8) {
       return 'Password must be at least 8 characters long.';
-    }
+    } 
 
     if(!value.contains(RegExp(r'[A-Z]'))){
       return 'Password must contain at least one uppercase letter.';
