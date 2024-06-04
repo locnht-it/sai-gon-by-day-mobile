@@ -12,8 +12,8 @@ class NavigationMenu extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
         destinations: const[
            NavigationDestination(icon: Icon(Iconsax.home), label: 'Home'),
-           NavigationDestination(icon: Icon(Iconsax.shop), label: 'Store'),
-           NavigationDestination(icon: Icon(Iconsax.heart), label: 'Wishlist'),
+           NavigationDestination(icon: Icon(Iconsax.shopping_cart), label: 'Order'),
+           NavigationDestination(icon: Icon(Iconsax.ticket), label: 'My Booking'),
            NavigationDestination(icon: Icon(Iconsax.user), label: 'Profile'),
         ],
       ),

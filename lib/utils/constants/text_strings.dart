@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class TTexts {
 
   // -- Onboarding Texts
-  static const String onBoardingTitle1 = "Choose your package";
-  static const String onBoardingTitle2 = "Select Payment Method";
-  static const String onBoardingTitle3 = "Deliver at your door step";
+  static const String onBoardingTitle1 = "Plan your trip";
+  static const String onBoardingTitle2 = "Get The Best Deal";
+  static const String onBoardingTitle3 = "Explore Local Attractions";
 
-  static const String onBoardingSubTitle1 = "Welcome to a World of Limitless Choices - Your Perfect Product Awaits!";
-  static const String onBoardingSubTitle2 = "For Seamless Transactions, Choose Your Payment Path - Your Convenience, Our Priority!";
-  static const String onBoardingSubTitle3 = "From Our Doorstep to Yours - Swift, Secure, and Contactless Delivery!";
+  static const String onBoardingSubTitle1 = "Create your dream trip with ease. Choose a destination, find the perfect place to stay, and create an itinerary that suits your preferences.";
+  static const String onBoardingSubTitle2 = "Save time and money by finding the best travel deals. We provide a range of exclusive promotions and discounts to make your trip more affordable.";
+  static const String onBoardingSubTitle3 = "Discover the beauty of local places you may never have visited. Experience local life and enjoy authentic experiences in each destination.";
 
   // -- Home
   static const String homeAppbarTitle = "Good day for traveling";
