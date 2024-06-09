@@ -18,6 +18,7 @@ class OnBoardingPage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(TSizes.defaultSpace),
       child: Column(
+        // mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
             width: THelperFunctions.screenWidth() * 0.8,

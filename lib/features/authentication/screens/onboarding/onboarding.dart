@@ -24,6 +24,30 @@ class OnBoardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
+
+          // Background
+          Container(
+            color: TColors.primary,
+            width: double.infinity,
+            height: double.infinity,
+          ),
+
+          // White Card
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              width: double.infinity,
+              height: MediaQuery.of(context).size.height * 0.45,
+              decoration: const BoxDecoration(
+                color: TColors.primaryBackground,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
+              ),
+            ),
+          ),
+
           /// Horizontal Scrollable Pages
           PageView(
             controller: controller.pageController,
