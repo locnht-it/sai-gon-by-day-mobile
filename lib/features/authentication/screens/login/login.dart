@@ -93,14 +93,14 @@ class LoginScreen extends StatelessWidget {
                     TLoginHeader(),
                     SizedBox(height: TSizes.xl),
 
-                    // Form
+                    /// Form
                     TLoginForm(),
 
-                    // Divider
+                    /// Divider
                     TFormDivider(dividerText: 'OR'),
                     SizedBox(height: TSizes.md),
 
-                    // Footer
+                    /// Footer
                     TSocialButtons(),
                     SizedBox(height: TSizes.lg), // Add some bottom padding
                   ],

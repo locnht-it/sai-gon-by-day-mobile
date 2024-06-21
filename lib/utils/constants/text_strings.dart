@@ -21,6 +21,11 @@ class TTexts {
   static const String conPassword = "Confirm Password";
   static const String username = "Username";
   static const String phoneNo = "Phone Number";
+  static const String address = "Address";
+  static const String gender = "Gender";
+  static const String male = "Male";
+  static const String feMale = "Female";
+  static const String others = "Others";
   static const String rememberMe = "Remember Me";
   static const String forgotPassword = "Forgot Password?";
   static const String signIn = "Sign In";

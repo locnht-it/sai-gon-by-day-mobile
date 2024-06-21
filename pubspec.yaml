@@ -25,6 +25,8 @@ dependencies:
   #Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.6
+#  awesome_notifications: ^0.8.2
+  flutter_local_notifications: ^13.0.0
 
   # State Management
   get: ^4.6.5
