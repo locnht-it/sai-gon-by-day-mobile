@@ -18,5 +18,12 @@ class TImages {
   // -- Login Images
   static const String loginImage = "assets/images/login_images/Login.png";
 
+  // -- Signup Images
+  static const String signupImage = "assets/images/signup_images/Signup.png";
+
+  // -- Verify Email Images
+  static const String verifyEmailImage = "assets/images/verify_email_images/Verify_email.png";
+  static const String verifyEmailSuccess = "assets/images/verify_email_images/Success_verify.png";
+
 
 }

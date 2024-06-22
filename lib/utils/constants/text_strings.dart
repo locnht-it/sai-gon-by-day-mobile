@@ -40,6 +40,8 @@ class TTexts {
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
   static const String resendOTP = "Resend OTP";
+  static const String tContinue = "Continue";
+  static const String alreadyHaveAccount = "Already have an account?";
 
 // -- Authenticaiton Heading Texts
   static const String loginTitle = "Sign in";

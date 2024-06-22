@@ -49,13 +49,14 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:onedaytrip/common/widgets.login_signup/social_buttons.dart';
 import 'package:onedaytrip/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:onedaytrip/features/authentication/screens/login/widgets/login_header.dart';
 import 'package:onedaytrip/utils/constants/image_strings.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
 
-import '../../../../common/widgets.login_signup/form_divider.dart';
+import '../../../../common/widgets/login_signup/form_divider.dart';
+import '../../../../common/widgets/login_signup/social_buttons.dart';
+
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

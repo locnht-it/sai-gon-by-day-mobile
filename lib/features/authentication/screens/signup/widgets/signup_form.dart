@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:onedaytrip/features/authentication/screens/signup/verify_email.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
-
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({
@@ -53,16 +54,14 @@ class TSignupForm extends StatelessWidget {
           /// Email
           TextFormField(
             decoration: const InputDecoration(
-                labelText: TTexts.email,
-                prefixIcon: Icon(Iconsax.direct)),
+                labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
           /// Phone Number
           TextFormField(
             decoration: const InputDecoration(
-                labelText: TTexts.phoneNo,
-                prefixIcon: Icon(Iconsax.call)),
+                labelText: TTexts.phoneNo, prefixIcon: Icon(Iconsax.call)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -70,8 +69,7 @@ class TSignupForm extends StatelessWidget {
           TextFormField(
             expands: false,
             decoration: const InputDecoration(
-                labelText: TTexts.address,
-                prefixIcon: Icon(Iconsax.location)),
+                labelText: TTexts.address, prefixIcon: Icon(Iconsax.location)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
@@ -100,7 +98,6 @@ class TSignupForm extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
-
           /// Password
           TextFormField(
             obscureText: true,
@@ -123,9 +120,12 @@ class TSignupForm extends StatelessWidget {
           ),
           const SizedBox(height: TSizes.spaceBtwSections),
 
-
           /// Sign Up Button
-          SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.createAccount)),)
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+                onPressed: () => Get.to(() => const VerifyEmailScreen()), child: const Text(TTexts.createAccount)),
+          )
         ],
       ),
     );

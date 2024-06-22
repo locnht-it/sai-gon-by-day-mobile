@@ -54,6 +54,8 @@ flutter:
     - assets/icons/brands/
     - assets/images/on_boarding_images/
     - assets/images/login_images/
+    - assets/images/signup_images/
+    - assets/images/verify_email_images/
 
 
 #---------------------- LOCAL ASSETS -----------------------------#
