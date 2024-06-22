@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/common/widgets/success_screen/success_screen.dart';
 import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/utils/constants/image_strings.dart';
@@ -23,7 +24,7 @@ class VerifyEmailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         // Padding to Give Default Equal Space on all sides in all screens.
         child: Padding(
-            padding: EdgeInsets.all(TSizes.defaultSpace),
+            padding: const EdgeInsets.all(TSizes.defaultSpace),
             child: Column(
               children: [
                 /// Image
@@ -37,6 +38,13 @@ class VerifyEmailScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwItems),
                 Text(TTexts.confirmEmailSubTitle, style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center),
                 const SizedBox(height: TSizes.spaceBtwSections),
+
+                /// Email
+                TextFormField(
+                  decoration: const InputDecoration(
+                      labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
+                ),
+                const SizedBox(height: TSizes.spaceBtwInputFields),
 
                 /// Buttons
                 SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen(
