@@ -41,7 +41,12 @@ class TTexts {
   static const String resendEmailIn = "Resend email in";
   static const String resendOTP = "Resend OTP";
   static const String tContinue = "Continue";
+  static const String verificationButton = "Verification";
   static const String alreadyHaveAccount = "Already have an account?";
+  static const String submit = "Submit";
+  static const String done = "Done";
+  static const String create = "Create";
+
 
 // -- Authenticaiton Heading Texts
   static const String loginTitle = "Sign in";

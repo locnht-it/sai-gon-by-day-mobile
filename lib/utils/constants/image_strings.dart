@@ -25,5 +25,7 @@ class TImages {
   static const String verifyEmailImage = "assets/images/verify_email_images/Verify_email.png";
   static const String verifyEmailSuccess = "assets/images/verify_email_images/Success_verify.png";
 
+  // -- Animations
+  static const String deliveredEmail = "assets/images/animations/Email_delivery.png";
 
 }

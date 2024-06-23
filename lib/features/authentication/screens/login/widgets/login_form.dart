@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:onedaytrip/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/signup.dart';
 
 import '../../../../../utils/constants/sizes.dart';
@@ -55,7 +56,7 @@ class TLoginForm extends StatelessWidget {
 
                 /// Forgot Password
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(TTexts.forgotPassword),
                 ),
               ],

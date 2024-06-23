@@ -56,6 +56,7 @@ flutter:
     - assets/images/login_images/
     - assets/images/signup_images/
     - assets/images/verify_email_images/
+    - assets/images/animations/
 
 
 #---------------------- LOCAL ASSETS -----------------------------#
