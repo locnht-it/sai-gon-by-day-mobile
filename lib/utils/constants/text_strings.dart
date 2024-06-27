@@ -66,10 +66,13 @@ class TTexts {
   static const String emailNotReceiveMessage = "Didn't get the email? Check your spam or resend it.";
   static const String yourAccountCreatedTitle = "Your account successfully create!";
   static const String yourAccountCreatedSubTitle = "Welcome to Trip By Day: Your Account is Created!";
+  static const String fillInfoSignUpGoogleTitle = "Complete Account";
+  static const String fillInfoSignUpGoogleSubTitle = "Please fill in your information to complete account";
+
 
 
   // -- Home
-  static const String homeAppbarTitle = "Good day for traveling";
-  static const String homeAppbarSubTitle = "Taimoor Sikander";
+  static const String homeAppbarTitle = "Your Location";
+  static const String homeAppbarSubTitle = "Sai Gon, Vietnam";
 
 }

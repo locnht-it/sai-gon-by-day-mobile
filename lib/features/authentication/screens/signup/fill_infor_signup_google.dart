@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:onedaytrip/features/authentication/screens/signup/widgets/signup_form.dart';
+import 'package:onedaytrip/features/authentication/screens/signup/widgets/fill_info_signup_google_form.dart';
+import 'package:onedaytrip/features/authentication/screens/signup/widgets/fill_info_signup_google_header.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/widgets/signup_header.dart';
 import 'package:onedaytrip/utils/constants/colors.dart';
-import 'package:onedaytrip/utils/constants/sizes.dart';
-import 'package:onedaytrip/utils/constants/text_strings.dart';
 
-import '../../../../common/widgets/login_signup/form_divider.dart';
-import '../../../../common/widgets/login_signup/social_buttons.dart';
 import '../../../../utils/constants/image_strings.dart';
+import '../../../../utils/constants/sizes.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+
+
+class FillInforSignupGoogle extends StatelessWidget {
+  const FillInforSignupGoogle({super.key});
   static final ValueNotifier<String?> _selectedGender = ValueNotifier<String?>(null);
 
   @override
@@ -21,7 +20,7 @@ class SignupScreen extends StatelessWidget {
         children: [
           // Blue background with image
           Container(
-            height: 300,
+            height: 400,
             color: TColors.primary, // Blue background color
             child: const Center(
               child: Image(
@@ -44,19 +43,12 @@ class SignupScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const TSignupHeader(),
+                    const TFillInfoSignUpGoogleHeader(),
                     const SizedBox(height: TSizes.xl),
 
                     /// Form
-                    TSignupForm(selectedGender: _selectedGender),
+                    TFillInfoSignUpGoogleForm(selectedGender: _selectedGender),
                     const SizedBox(height: TSizes.spaceBtwSections),
-
-                    /// Divider
-                    TFormDivider(dividerText: TTexts.orSignUpWith.capitalize!),
-                    const SizedBox(height: TSizes.spaceBtwSections),
-
-                    /// Social Buttons
-                    const TSocialButtons(),
                   ],
                 ),
               ),

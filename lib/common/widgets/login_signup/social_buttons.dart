@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:onedaytrip/features/authentication/screens/signup/fill_infor_signup_google.dart';
 
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -18,7 +20,7 @@ class TSocialButtons extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => Get.to(() => const FillInforSignupGoogle()),
             icon: const Image(
               width: TSizes.iconMd,
               height: TSizes.iconMd,
