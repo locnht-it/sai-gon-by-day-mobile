@@ -19,6 +19,7 @@ dependencies:
   intl: ^0.18.1
   logger: ^2.0.1
   url_launcher: ^6.1.12
+  carousel_slider: ^4.2.1
   flutter_native_splash: ^2.4.0
   smooth_page_indicator: ^1.1.0
 
@@ -57,6 +58,8 @@ flutter:
     - assets/images/signup_images/
     - assets/images/verify_email_images/
     - assets/images/animations/
+    - assets/images/places/
+    - assets/images/banner/
 
 
 #---------------------- LOCAL ASSETS -----------------------------#

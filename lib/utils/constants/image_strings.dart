@@ -28,4 +28,12 @@ class TImages {
   // -- Animations
   static const String deliveredEmail = "assets/images/animations/Email_delivery.png";
 
+  // -- Places
+  static const String semeruMountain = "assets/images/places/semeru_mountain.jpg";
+  static const String rajaAmpat = "assets/images/places/raja_ampat.png";
+
+  // -- Banners
+  static const String lima = "lima.jpg.avif";
+  static const String chicago = "assets/images/banner/chicago.jpg.avif";
+  static const String tokyo = "assets/images/banner/tokyo.jpg.avif";
 }
