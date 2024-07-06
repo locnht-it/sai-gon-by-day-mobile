@@ -1,4 +1,3 @@
-import 'package:intl/locale.dart';
 import 'package:logger/logger.dart';
 
 class TLoggerHelper {

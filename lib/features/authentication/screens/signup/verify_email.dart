@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/common/widgets/otp_verification/otp_verification.dart';
-import 'package:onedaytrip/common/widgets/success_screen/success_screen.dart';
 import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/utils/constants/image_strings.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
@@ -48,7 +47,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwInputFields),
 
                 /// Buttons
-                SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => OtpVerificationScreen()),
+                SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () => Get.to(() => const OtpVerificationScreen()),
                 //     SuccessScreen(
                 //   image: TImages.verifyEmailSuccess,
                 //   title: TTexts.yourAccountCreatedTitle,

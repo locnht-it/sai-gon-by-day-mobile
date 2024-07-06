@@ -23,3 +23,10 @@ plugins {
 }
 
 include ":app"
+
+// Remove or comment out the following lines
+// setBinding(new Binding([gradle: this]))
+// evaluate(new File(
+//         settingsDir.parentFile,
+//         'flutter_settings.gradle'
+// ))

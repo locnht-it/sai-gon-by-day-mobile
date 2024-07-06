@@ -66,6 +66,8 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
+
+
 class THomeCategoryItem extends StatelessWidget {
   final String image;
   final String title;
@@ -77,8 +79,8 @@ class THomeCategoryItem extends StatelessWidget {
     required this.title,
     required this.location,
     required this.rating,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -112,10 +114,15 @@ class THomeCategoryItem extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
+                const SizedBox(height: 4), // Khoảng cách giữa title và location
                 Text(
                   location,
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(color: Colors.grey),
+                  softWrap: true, // Cho phép văn bản xuống dòng
+                  maxLines: 2, // Số dòng tối đa
+                  overflow: TextOverflow.ellipsis, // Đảm bảo văn bản không bị tràn
                 ),
+                const SizedBox(height: 4), // Khoảng cách giữa location và rating
                 Row(
                   children: [
                     const Icon(Icons.star, color: Colors.amber, size: 16.0),
@@ -130,4 +137,3 @@ class THomeCategoryItem extends StatelessWidget {
     );
   }
 }
-

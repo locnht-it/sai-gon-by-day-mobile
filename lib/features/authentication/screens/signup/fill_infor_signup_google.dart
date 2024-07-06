@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/widgets/fill_info_signup_google_form.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/widgets/fill_info_signup_google_header.dart';
-import 'package:onedaytrip/features/authentication/screens/signup/widgets/signup_header.dart';
 import 'package:onedaytrip/utils/constants/colors.dart';
 
 import '../../../../utils/constants/image_strings.dart';

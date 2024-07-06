@@ -8,7 +8,6 @@ import 'package:onedaytrip/utils/theme/custom_themes/outlined_button_theme.dart'
 import 'package:onedaytrip/utils/theme/custom_themes/text_field_theme.dart';
 import 'package:onedaytrip/utils/theme/custom_themes/text_theme.dart';
 
-import '';
 
 class TAppTheme {
   TAppTheme._();

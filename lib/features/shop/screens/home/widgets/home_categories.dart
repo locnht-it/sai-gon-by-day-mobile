@@ -33,16 +33,16 @@ import 'home_category_items.dart';
 
 class THomeCategories extends StatelessWidget {
   const THomeCategories({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 200,
+      height: 207,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: [
+        children: const [
           THomeCategoryItem(
             image: TImages.semeruMountain,
             title: 'Semeru Mountain',

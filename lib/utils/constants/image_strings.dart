@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class TImages {
 
@@ -31,9 +30,22 @@ class TImages {
   // -- Places
   static const String semeruMountain = "assets/images/places/semeru_mountain.jpg";
   static const String rajaAmpat = "assets/images/places/raja_ampat.png";
+  static const String tidung = "assets/images/places/pulau-tidung.jpg";
+  static const String pari = "assets/images/places/Pari_island.jpg";
+  static const String kerinci = "assets/images/places/Kerinci_mountain.jpg";
+  static const String kefalonia = "assets/images/places/Kefalonia_island.jpeg.avif";
+  static const String greek = "assets/images/places/Greek_island.jpg.avif";
+  static const String marina = "assets/images/places/Vlora_Marina.jpg.avif";
+  static const String australia = "assets/images/places/australia.jpg.avif";
+  static const String bergamo = "assets/images/places/bergamo.jpg.avif";
+  static const String osaka = "assets/images/places/osaka.jpg.avif";
+
 
   // -- Banners
-  static const String lima = "lima.jpg.avif";
+  static const String lima = "assets/images/banner/lima.jpg.avif";
   static const String chicago = "assets/images/banner/chicago.jpg.avif";
   static const String tokyo = "assets/images/banner/tokyo.jpg.avif";
+
+  // -- Users
+  static const String user = "assets/images/users/user.png";
 }

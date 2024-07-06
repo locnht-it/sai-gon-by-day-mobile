@@ -1,55 +1,81 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:onedaytrip/features/shop/screens/home/widgets/home_appbar.dart';
-// import 'package:onedaytrip/features/shop/screens/home/widgets/home_categories.dart';
-// import 'package:onedaytrip/utils/constants/colors.dart';
-// import 'package:onedaytrip/utils/constants/image_strings.dart';
-// import 'package:onedaytrip/utils/constants/sizes.dart';
-// import 'package:onedaytrip/utils/helpers/helper_functions.dart';
-// import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
-// import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
-// import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
-// import '../../../../common/widgets/texts/section_heading.dart';
-//
+import 'package:flutter/material.dart';
+import 'package:onedaytrip/common/widgets/layouts/grid_layout.dart';
+import 'package:onedaytrip/common/widgets/layouts/horizontal_layout.dart';
+import 'package:onedaytrip/features/shop/screens/home/widgets/%20promo_slider.dart';
+import 'package:onedaytrip/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:onedaytrip/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:onedaytrip/utils/constants/image_strings.dart';
+import 'package:onedaytrip/utils/constants/sizes.dart';
+import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
+import '../../../../common/widgets/products/product_cards/product_card_horizontal.dart';
+import '../../../../common/widgets/products/product_cards/product_card_verticle.dart';
+import '../../../../common/widgets/texts/section_heading.dart';
+
 // class HomeScreen extends StatelessWidget {
-//   const HomeScreen({super.key});
+//   const HomeScreen({Key? key}) : super(key: key);
+//
+//   void _onSeeAllPressed() {
+//     // Handle the "See all" button press
+//   }
 //
 //   @override
 //   Widget build(BuildContext context) {
-//     return const Scaffold(
+//     return Scaffold(
 //       body: SingleChildScrollView(
 //         child: Column(
 //           children: [
-//             TPrimaryHeaderContainer(
+//             Column(
+//               children: [
+//                 /// -- Appbar
+//                 const THomeAppBar(),
+//                 const SizedBox(height: TSizes.spaceBtwSections),
+//
+//                 /// -- Searchbar
+//                 const TSearchContainer(text: 'Search'),
+//                 const SizedBox(height: TSizes.spaceBtwSections),
+//
+//                 /// -- Categories
+//                 Padding(
+//                   padding: const EdgeInsets.symmetric(
+//                       horizontal: TSizes.defaultSpace,
+//                       vertical: TSizes.defaultSpace),
+//                   child: Column(
+//                     children: [
+//                       /// -- Heading
+//                       TSectionHeading(
+//                         title: 'Popular Nearby',
+//                         showActionButton: true,
+//                         textColor: Colors.black,
+//                         onPressed: _onSeeAllPressed,
+//                       ),
+//                       const SizedBox(height: TSizes.spaceBtwItems),
+//
+//                       /// -- Categories
+//                       /// -- Categories List
+//                       const THomeCategories(),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//              Padding(
+//               padding: const EdgeInsets.all(TSizes.defaultSpace),
 //               child: Column(
 //                 children: [
-//                   /// -- Appbar
-//                   THomeAppBar(),
-//                   SizedBox(height: TSizes.spaceBtwSections),
+//                   /// -- Promo Slider
+//                   const TPromoSlider(banners: [TImages.chicago, TImages.lima, TImages.tokyo]),
+//                   const SizedBox(height: TSizes.spaceBtwSections),
 //
-//                   /// -- Searchbar
-//                   TSearchContainer(text: 'Search'),
-//                   SizedBox(height: TSizes.spaceBtwSections),
+//                   /// -- Heading
+//                   TSectionHeading(title: 'Nearest your location', onPressed: () {}),
+//                   const SizedBox(height: TSizes.spaceBtwItems),
 //
-//                   /// -- Categories
-//                   Padding(
-//                     padding: EdgeInsets.only(left: TSizes.defaultSpace),
-//                     child: Column(
-//                       children: [
-//                         /// -- Heading
-//                         TSectionHeading(
-//                             title: 'Popular Nearby',
-//                             showActionButton: false,
-//                             textColor: Colors.white),
-//                         SizedBox(height: TSizes.spaceBtwItems),
-//
-//                         /// -- Categories
-//                         THomeCategories()
-//                       ],
-//                     ),
-//                   )
+//                   /// -- Neareast your location
+//                   TGridLayout(itemCount: 2, itemBuilder: (_, index) => const TProductCardVertical())
 //                 ],
 //               ),
+//
+//
 //             ),
 //           ],
 //         ),
@@ -58,23 +84,8 @@
 //   }
 // }
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:onedaytrip/features/shop/screens/home/widgets/home_appbar.dart';
-import 'package:onedaytrip/features/shop/screens/home/widgets/home_categories.dart';
-import 'package:onedaytrip/utils/constants/colors.dart';
-import 'package:onedaytrip/utils/constants/image_strings.dart';
-import 'package:onedaytrip/utils/constants/sizes.dart';
-import 'package:onedaytrip/utils/helpers/helper_functions.dart';
-import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
-import '../../../../common/widgets/texts/section_heading.dart';
-
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  void _onSeeAllPressed() {
-    // Handle the "See all" button press
-  }
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -84,30 +95,23 @@ class HomeScreen extends StatelessWidget {
           children: [
             Column(
               children: [
-                /// -- Appbar
                 const THomeAppBar(),
                 const SizedBox(height: TSizes.spaceBtwSections),
-
-                /// -- Searchbar
                 const TSearchContainer(text: 'Search'),
                 const SizedBox(height: TSizes.spaceBtwSections),
-
-                /// -- Categories
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace, vertical: TSizes.defaultSpace),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: TSizes.defaultSpace,
+                      vertical: TSizes.defaultSpace),
                   child: Column(
                     children: [
-                      /// -- Heading
                       TSectionHeading(
                         title: 'Popular Nearby',
                         showActionButton: true,
                         textColor: Colors.black,
-                        onPressed: _onSeeAllPressed,
+                        onPressed: () {},
                       ),
                       const SizedBox(height: TSizes.spaceBtwItems),
-
-                      /// -- Categories
-                      /// -- Categories List
                       const THomeCategories(),
                     ],
                   ),
@@ -115,12 +119,60 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
 
+            /// Slider & Nearest your location
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  const TPromoSlider(banners: [
+                    TImages.chicago,
+                    TImages.lima,
+                    TImages.tokyo
+                  ]),
+                  const SizedBox(height: TSizes.spaceBtwSections),
+                  TSectionHeading(
+                      title: 'Nearest your location', onPressed: () {}),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  TGridLayout(
+                      itemCount: 2,
+                      itemBuilder: (_, index) =>
+                      const TProductCardVertical()),
+                ],
+              ),
+            ),
 
+            /// Recommended Section
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: TSizes.defaultSpace,
+                vertical: TSizes.defaultSpace / 2, // Điều chỉnh khoảng cách dọc
+              ),
+              child: Column(
+                children: [
+                  TSectionHeading(
+                    title: 'Recommended',
+                    showActionButton: true,
+                    textColor: Colors.black,
+                    onPressed: () {},
+                  ),
 
+                  // ListView.builder(
+                  //   shrinkWrap: true,
+                  //   physics: const NeverScrollableScrollPhysics(),
+                  //   itemCount: 4, // Số lượng item
+                  //   itemBuilder: (context, index) {
+                  //     return const ProductCardHorizontal(); // Sử dụng ProductCardHorizontal
+                  //   },
+                  // ),
+                  THorizontalLayout(
+                      itemCount: 4,
+                      itemBuilder: (_, index) =>
+                      const TProductCardHorizontal()),
+                ],
+              ),
+            ),
           ],
         ),
-
-
       ),
     );
   }

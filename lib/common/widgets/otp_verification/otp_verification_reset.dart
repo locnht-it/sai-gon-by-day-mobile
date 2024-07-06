@@ -1,18 +1,14 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:onedaytrip/features/authentication/screens/password_configuration/create_newpass.dart';
-import 'package:onedaytrip/features/authentication/screens/password_configuration/reset_password.dart';
 
-import '../../../features/authentication/screens/login/login.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
-import '../success_screen/success_screen.dart';
 
 class OtpVerificationScreenReset extends StatefulWidget {
-  const OtpVerificationScreenReset({Key? key}) : super(key: key);
+  const OtpVerificationScreenReset({super.key});
 
   @override
   _OtpVerificationScreenState createState() => _OtpVerificationScreenState();

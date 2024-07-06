@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:onedaytrip/common/widgets/otp_verification/otp_verification.dart';
-import 'package:onedaytrip/common/widgets/otp_verification/otp_verification_reset.dart';
-import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/features/authentication/screens/password_configuration/reset_password.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
 import 'package:onedaytrip/utils/constants/text_strings.dart';

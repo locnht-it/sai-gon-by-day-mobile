@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/signup.dart';
-import 'package:onedaytrip/features/shop/screens/home/home.dart';
 import 'package:onedaytrip/navigation_menu.dart';
 
 import '../../../../../utils/constants/sizes.dart';

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../features/authentication/screens/login/login.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -10,7 +9,7 @@ import '../../../utils/constants/text_strings.dart';
 import '../success_screen/success_screen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
-  const OtpVerificationScreen({Key? key}) : super(key: key);
+  const OtpVerificationScreen({super.key});
 
   @override
   _OtpVerificationScreenState createState() => _OtpVerificationScreenState();
