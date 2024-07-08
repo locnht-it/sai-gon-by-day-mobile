@@ -39,6 +39,7 @@ class TImages {
   static const String australia = "assets/images/places/australia.jpg.avif";
   static const String bergamo = "assets/images/places/bergamo.jpg.avif";
   static const String osaka = "assets/images/places/osaka.jpg.avif";
+  static const String canada = "assets/images/places/canada.jpg.avif";
 
 
   // -- Banners

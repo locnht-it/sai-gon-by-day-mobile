@@ -27,6 +27,8 @@
 //
 
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:onedaytrip/features/shop/screens/package_details/package_detail.dart';
 
 import '../../../../../utils/constants/image_strings.dart';
 import 'home_category_items.dart';
@@ -38,25 +40,28 @@ class THomeCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 207,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: const [
-          THomeCategoryItem(
-            image: TImages.semeruMountain,
-            title: 'Semeru Mountain',
-            location: 'East Java, Indonesia',
-            rating: 4.8,
-          ),
-          SizedBox(width: 16), // Spacer between items
-          THomeCategoryItem(
-            image: TImages.rajaAmpat,
-            title: 'Raja Ampat',
-            location: 'West Papua, Indonesia',
-            rating: 4.9,
-          ),
-        ],
+    return GestureDetector(
+      onTap: () => Get.to(() => const ProductDetailScreen()),
+      child: SizedBox(
+        height: 207,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: const [
+            THomeCategoryItem(
+              image: TImages.semeruMountain,
+              title: 'Semeru Mountain',
+              location: 'East Java, Indonesia',
+              rating: 4.8,
+            ),
+            SizedBox(width: 16), // Spacer between items
+            THomeCategoryItem(
+              image: TImages.rajaAmpat,
+              title: 'Raja Ampat',
+              location: 'West Papua, Indonesia',
+              rating: 4.9,
+            ),
+          ],
+        ),
       ),
     );
   }

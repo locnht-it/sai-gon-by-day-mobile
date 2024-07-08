@@ -6,6 +6,7 @@ import 'package:onedaytrip/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:onedaytrip/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:onedaytrip/utils/constants/image_strings.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
+import '../../../../common/widgets/articles/article_card.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/products/product_cards/product_card_horizontal.dart';
 import '../../../../common/widgets/products/product_cards/product_card_verticle.dart';
@@ -156,18 +157,45 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {},
                   ),
 
-                  // ListView.builder(
-                  //   shrinkWrap: true,
-                  //   physics: const NeverScrollableScrollPhysics(),
-                  //   itemCount: 4, // Số lượng item
-                  //   itemBuilder: (context, index) {
-                  //     return const ProductCardHorizontal(); // Sử dụng ProductCardHorizontal
-                  //   },
-                  // ),
                   THorizontalLayout(
                       itemCount: 4,
                       itemBuilder: (_, index) =>
                       const TProductCardHorizontal()),
+                ],
+              ),
+            ),
+
+            /// Article Section
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: TSizes.defaultSpace,
+                vertical: TSizes.defaultSpace / 2,
+              ),
+              child: Column(
+                children: [
+                  TSectionHeading(
+                    title: 'Article',
+                    showActionButton: true,
+                    textColor: Colors.black,
+                    onPressed: () {},
+                  ),
+                  const SizedBox(height: TSizes.spaceBtwItems),
+                  SizedBox(
+                    height: 250, // Chiều cao của bài viết
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 2, // Số lượng bài viết
+                      itemBuilder: (context, index) {
+                        return const ArticleCard(
+                          imageUrl: AssetImage(TImages.canada), // Sử dụng AssetImage cho ảnh của bạn
+                          title: 'The essential guide to visiting Canada',
+                          author: 'Alexander Wooley',
+                          date: '5 June 2024',
+                          url: 'https://www.nationalgeographic.com/travel/article/essential-guide-canada', // Thay bằng link bài báo của bạn
+                        );
+                      },
+                    ),
+                  ),
                 ],
               ),
             ),

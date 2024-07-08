@@ -5,6 +5,7 @@ import 'package:onedaytrip/common/widgets/appbar/appbar.dart';
 import 'package:onedaytrip/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:onedaytrip/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:onedaytrip/common/widgets/texts/section_heading.dart';
+import 'package:onedaytrip/features/personalization/screens/address/address.dart';
 import 'package:onedaytrip/features/personalization/screens/profile/profile.dart';
 import 'package:onedaytrip/utils/constants/colors.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
@@ -44,7 +45,7 @@ class SettingsScreen extends StatelessWidget {
                   const TSectionHeading(title: 'Account Settings', showActionButton: false),
                   const SizedBox(height: TSizes.spaceBtwItems),
 
-                  const TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery address'),
+                  TSettingsMenuTile(icon: Iconsax.safe_home, title: 'My Addresses', subTitle: 'Set shopping delivery address', onTap: () => Get.to(() => const UserAddressScreen()),),
                   const TSettingsMenuTile(icon: Iconsax.shopping_cart, title: 'Order', subTitle: 'Add, remove products and move to checkout'),
                   const TSettingsMenuTile(icon: Iconsax.bag_tick, title: 'My Booking', subTitle: 'In-progress and Completed Orders'),
                   const TSettingsMenuTile(icon: Iconsax.bank, title: 'Bank Account', subTitle: 'Withdraw balance to registered bank account'),
