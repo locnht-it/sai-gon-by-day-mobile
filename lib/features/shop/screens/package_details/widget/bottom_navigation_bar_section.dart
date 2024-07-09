@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:onedaytrip/features/shop/screens/checkout/checkout.dart';
 
 class BottomNavigationBarSection extends StatelessWidget {
   const BottomNavigationBarSection({Key? key}) : super(key: key);
@@ -20,9 +22,7 @@ class BottomNavigationBarSection extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {
-              // Action when the "Book Now" button is pressed
-            },
+            onPressed: () => Get.to(() => const CheckoutScreen()),
             style: ElevatedButton.styleFrom(
               padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
               backgroundColor: Colors.blue,

@@ -41,6 +41,14 @@ class TImages {
   static const String osaka = "assets/images/places/osaka.jpg.avif";
   static const String canada = "assets/images/places/canada.jpg.avif";
 
+  // -- Payment Methods
+  static const String applePay = "assets/icons/payment_methods/apple_pay.png";
+  static const String googlePay = "assets/icons/payment_methods/google_pay.png";
+  static const String domesticTransfer = "assets/icons/payment_methods/domestic_transfer.png";
+  static const String masterCard = "assets/icons/payment_methods/master_card.png";
+  static const String payPal = "assets/icons/payment_methods/paypal.png";
+  static const String successfulPayment = "assets/icons/payment_methods/successful_payment.png";
+  static const String visa = "assets/icons/payment_methods/visa.png";
 
   // -- Banners
   static const String lima = "assets/images/banner/lima.jpg.avif";

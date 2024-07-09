@@ -65,6 +65,7 @@ flutter:
     - assets/images/animations/
     - assets/images/places/
     - assets/images/banner/
+    - assets/icons/payment_methods/
 
 
 #---------------------- LOCAL ASSETS -----------------------------#
