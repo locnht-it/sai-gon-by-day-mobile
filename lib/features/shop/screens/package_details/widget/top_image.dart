@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onedaytrip/utils/constants/image_strings.dart';
 
 class TopImageSection extends StatelessWidget {
   final VoidCallback onBackPressed;
@@ -17,7 +18,7 @@ class TopImageSection extends StatelessWidget {
     return Stack(
       children: [
         Image.asset(
-          'assets/images/places/canada.jpg.avif', // Đường dẫn đến hình ảnh
+          TImages.canada, // Đường dẫn đến hình ảnh
           height: 300,
           width: double.infinity,
           fit: BoxFit.cover,

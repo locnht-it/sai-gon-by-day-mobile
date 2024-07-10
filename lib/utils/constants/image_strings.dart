@@ -33,13 +33,13 @@ class TImages {
   static const String tidung = "assets/images/places/pulau-tidung.jpg";
   static const String pari = "assets/images/places/Pari_island.jpg";
   static const String kerinci = "assets/images/places/Kerinci_mountain.jpg";
-  static const String kefalonia = "assets/images/places/Kefalonia_island.jpeg.avif";
-  static const String greek = "assets/images/places/Greek_island.jpg.avif";
-  static const String marina = "assets/images/places/Vlora_Marina.jpg.avif";
-  static const String australia = "assets/images/places/australia.jpg.avif";
-  static const String bergamo = "assets/images/places/bergamo.jpg.avif";
-  static const String osaka = "assets/images/places/osaka.jpg.avif";
-  static const String canada = "assets/images/places/canada.jpg.avif";
+  static const String kefalonia = "assets/images/places/Kefalonia_island.jpeg";
+  static const String greek = "assets/images/places/Greek_island.jpg";
+  static const String marina = "assets/images/places/Vlora_Marina.jpg";
+  static const String australia = "assets/images/places/australia.png";
+  static const String bergamo = "assets/images/places/bergamo.jpg";
+  static const String osaka = "assets/images/places/osaka.jpg";
+  static const String canada = "assets/images/places/canada.png";
 
   // -- Payment Methods
   static const String applePay = "assets/icons/payment_methods/apple_pay.png";
@@ -48,12 +48,13 @@ class TImages {
   static const String masterCard = "assets/icons/payment_methods/master_card.png";
   static const String payPal = "assets/icons/payment_methods/paypal.png";
   static const String successfulPayment = "assets/icons/payment_methods/successful_payment.png";
+  static const String paymentSuccess = "assets/icons/payment_methods/payment_success.gif";
   static const String visa = "assets/icons/payment_methods/visa.png";
 
   // -- Banners
-  static const String lima = "assets/images/banner/lima.jpg.avif";
-  static const String chicago = "assets/images/banner/chicago.jpg.avif";
-  static const String tokyo = "assets/images/banner/tokyo.jpg.avif";
+  static const String lima = "assets/images/banner/lima.png";
+  static const String chicago = "assets/images/banner/chicago.png";
+  static const String tokyo = "assets/images/banner/tokyo.png";
 
   // -- Users
   static const String user = "assets/images/users/user.png";
