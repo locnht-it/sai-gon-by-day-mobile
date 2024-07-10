@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:onedaytrip/features/authentication/screens/signup/signup.dart';
 
 import '../../../features/authentication/screens/login/login.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -147,7 +148,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                             image: TImages.verifyEmailSuccess,
                             title: TTexts.yourAccountCreatedTitle,
                             subTitle: TTexts.yourAccountCreatedSubTitle,
-                            onPressed: () => Get.to(() => const LoginScreen()),
+                            onPressed: () => Get.to(() => const SignupScreen()),
                           ),),
                         child: const Text(TTexts.verificationButton),
                       ),

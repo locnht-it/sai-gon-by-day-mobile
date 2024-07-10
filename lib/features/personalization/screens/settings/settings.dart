@@ -5,6 +5,7 @@ import 'package:onedaytrip/common/widgets/appbar/appbar.dart';
 import 'package:onedaytrip/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:onedaytrip/common/widgets/list_tiles/settings_menu_tile.dart';
 import 'package:onedaytrip/common/widgets/texts/section_heading.dart';
+import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/features/personalization/screens/address/address.dart';
 import 'package:onedaytrip/features/personalization/screens/profile/profile.dart';
 import 'package:onedaytrip/features/shop/screens/order/order.dart';
@@ -82,7 +83,7 @@ class SettingsScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections),
                   SizedBox(
                     width: double.infinity,
-                    child: OutlinedButton(onPressed: (){}, child: const Text('Logout')),
+                    child: OutlinedButton(onPressed: () => Get.to(() => const LoginScreen()), child: const Text('Logout')),
                   ),
                   const SizedBox(height: TSizes.spaceBtwSections * 2.5),
                 ],

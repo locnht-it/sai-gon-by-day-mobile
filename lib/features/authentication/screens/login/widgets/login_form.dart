@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/signup.dart';
+import 'package:onedaytrip/features/authentication/screens/signup/verify_email.dart';
 import 'package:onedaytrip/navigation_menu.dart';
 
 import '../../../../../utils/constants/sizes.dart';
@@ -83,7 +84,7 @@ class TLoginForm extends StatelessWidget {
             /// Create Account Button
             SizedBox(width: double.infinity,
               child: OutlinedButton(
-                onPressed: () => Get.to(() => const SignupScreen()) ,
+                onPressed: () => Get.to(() => const VerifyEmailScreen()) ,
                 style: OutlinedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: TSizes.md),
                   shape: RoundedRectangleBorder(
