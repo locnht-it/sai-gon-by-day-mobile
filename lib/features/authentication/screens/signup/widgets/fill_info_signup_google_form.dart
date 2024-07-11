@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/features/shop/screens/home/home.dart';
+import 'package:onedaytrip/navigation_menu.dart';
 
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
@@ -104,7 +105,7 @@ class TFillInfoSignUpGoogleForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-                onPressed: () => Get.to(() => const HomeScreen()), child: const Text(TTexts.createAccount)),
+                onPressed: () => Get.to(() => const NavigationMenu()), child: const Text(TTexts.createAccount)),
           )
         ],
       ),

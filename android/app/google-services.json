@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "488062954000",
-    "project_id": "pushnotification-48295",
-    "storage_bucket": "pushnotification-48295.appspot.com"
+    "project_number": "246705111271",
+    "project_id": "pushnotification-122f7",
+    "storage_bucket": "pushnotification-122f7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:488062954000:android:2cf7dd6f5476aa59f0b895",
+        "mobilesdk_app_id": "1:246705111271:android:39c8ede7c781ebc14be242",
         "android_client_info": {
-          "package_name": "com.TPP.onedaytrip"
+          "package_name": "com.example.fcm_push_notification"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCISF3oxhhGpZ7a6KBIiPgdoq1pAMt-X7g"
+          "current_key": "AIzaSyCgOuB4TOKZZgNX2YGqYHjPHEjlLkuxzSg"
         }
       ],
       "services": {
