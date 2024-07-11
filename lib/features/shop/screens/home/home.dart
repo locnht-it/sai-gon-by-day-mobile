@@ -6,6 +6,7 @@ import 'package:onedaytrip/features/shop/screens/all_products/all_products.dart'
 import 'package:onedaytrip/features/shop/screens/home/widgets/%20promo_slider.dart';
 import 'package:onedaytrip/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:onedaytrip/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:onedaytrip/navigation_menu.dart';
 import 'package:onedaytrip/utils/constants/image_strings.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
 import '../../../../common/widgets/articles/article_card.dart';
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                         title: 'Popular Nearby',
                         showActionButton: true,
                         textColor: Colors.black,
-                        onPressed: () {},
+                        onPressed: () => Get.to(() => const AllProducts()),
                       ),
                       const SizedBox(height: TSizes.spaceBtwItems),
                       const THomeCategories(),
@@ -58,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                   const TPromoSlider(banners: [
                     TImages.chicago,
                     TImages.lima,
-                    TImages.tokyo
+                    TImages.tokyo,
                   ]),
                   const SizedBox(height: TSizes.spaceBtwSections),
                   TSectionHeading(
@@ -84,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                     title: 'Recommended',
                     showActionButton: true,
                     textColor: Colors.black,
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => const AllProducts()),
                   ),
 
                   THorizontalLayout(

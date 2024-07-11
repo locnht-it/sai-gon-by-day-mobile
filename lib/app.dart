@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:onedaytrip/main.dart';
 import 'package:onedaytrip/utils/theme/theme.dart';
 
 import 'features/authentication/screens/onboarding/onboarding.dart';
@@ -14,6 +15,7 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       home: const OnBoardingScreen(),
+      navigatorKey: navigatorkey,
     );
   }
 }

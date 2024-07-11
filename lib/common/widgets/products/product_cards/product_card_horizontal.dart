@@ -52,8 +52,8 @@ class TProductCardHorizontal extends StatelessWidget {
           ListTile(
             contentPadding: const EdgeInsets.symmetric(vertical: TSizes.lg / 7, horizontal: TSizes.lg / 2),
             leading: SizedBox(
-              width: 80, // Adjust width according to your image size or design requirements
-              height: 80, // Adjust height if needed
+              width: 70, // Adjust width according to your image size or design requirements
+              height: 60, // Adjust height if needed
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(TSizes.cardRadiusSm),
                 child: const

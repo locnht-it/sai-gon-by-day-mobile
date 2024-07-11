@@ -14,6 +14,7 @@ class TTexts {
   // -- Authentication Form Text
   static const String firstName = "First Name";
   static const String lastName = "Last Name";
+  static const String fullName = "Full Name";
   static const String email = "Email";
   static const String password = "Password";
   static const String newPassword = "New Password";

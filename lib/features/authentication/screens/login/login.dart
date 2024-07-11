@@ -82,7 +82,7 @@ class LoginScreen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: SingleChildScrollView(
               child: Container(
-                margin: const EdgeInsets.only(top: 200), // Space from top to overlay the form
+                margin: const EdgeInsets.only(top: 250), // Space from top to overlay the form
                 padding: const EdgeInsets.all(TSizes.md),
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -92,18 +92,18 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TLoginHeader(),
-                    SizedBox(height: TSizes.xl),
+                    SizedBox(height: TSizes.xs),
 
                     /// Form
                     TLoginForm(),
 
                     /// Divider
                     TFormDivider(dividerText: 'OR'),
-                    SizedBox(height: TSizes.md),
+                    SizedBox(height: TSizes.xs),
 
                     /// Footer
                     TSocialButtons(),
-                    SizedBox(height: TSizes.lg), // Add some bottom padding
+                    SizedBox(height: TSizes.xs), // Add some bottom padding
                   ],
                 ),
               ),

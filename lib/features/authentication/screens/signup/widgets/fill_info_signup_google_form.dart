@@ -21,44 +21,44 @@ class TFillInfoSignUpGoogleForm extends StatelessWidget {
     return Form(
       child: Column(
         children: [
-          Row(
-            children: [
-              Expanded(
-                child: TextFormField(
-                  expands: false,
-                  decoration: const InputDecoration(
-                      labelText: TTexts.firstName,
-                      prefixIcon: Icon(Iconsax.user)),
-                ),
-              ),
-              const SizedBox(width: TSizes.spaceBtwInputFields),
-              Expanded(
-                child: TextFormField(
-                  expands: false,
-                  decoration: const InputDecoration(
-                      labelText: TTexts.lastName,
-                      prefixIcon: Icon(Iconsax.user)),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: TSizes.spaceBtwInputFields),
+          // Row(
+          //   children: [
+          //     Expanded(
+          //       child: TextFormField(
+          //         expands: false,
+          //         decoration: const InputDecoration(
+          //             labelText: TTexts.firstName,
+          //             prefixIcon: Icon(Iconsax.user)),
+          //       ),
+          //     ),
+          //     const SizedBox(width: TSizes.spaceBtwInputFields),
+          //     Expanded(
+          //       child: TextFormField(
+          //         expands: false,
+          //         decoration: const InputDecoration(
+          //             labelText: TTexts.lastName,
+          //             prefixIcon: Icon(Iconsax.user)),
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // const SizedBox(height: TSizes.spaceBtwInputFields),
 
-          /// Username
+          /// Fullname
           TextFormField(
             expands: false,
             decoration: const InputDecoration(
-                labelText: TTexts.username,
-                prefixIcon: Icon(Iconsax.user_edit)),
+                labelText: TTexts.fullName,
+                prefixIcon: Icon(Iconsax.user)),
           ),
           const SizedBox(height: TSizes.spaceBtwInputFields),
 
-          /// Email
-          TextFormField(
-            decoration: const InputDecoration(
-                labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
-          ),
-          const SizedBox(height: TSizes.spaceBtwInputFields),
+          // /// Email
+          // TextFormField(
+          //   decoration: const InputDecoration(
+          //       labelText: TTexts.email, prefixIcon: Icon(Iconsax.direct)),
+          // ),
+          // const SizedBox(height: TSizes.spaceBtwInputFields),
 
           /// Phone Number
           TextFormField(
