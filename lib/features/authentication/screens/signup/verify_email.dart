@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:http/http.dart' as http;
+import 'package:onedaytrip/api/global_variables/user_manage.dart';
 import 'package:onedaytrip/common/widgets/otp_verification/otp_verification.dart';
 import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/utils/constants/image_strings.dart';
@@ -42,12 +43,17 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
 
       if (response.statusCode == 201) {
         final responseData = json.decode(response.body);
-        final userId = responseData['content']['id'];
-        final userRole = responseData['content']['role'];
-        final userEmail = responseData['content']['email'];
+        //final userId = responseData['content']['id'];
+        //final userRole = responseData['content']['role'];
+        //final userEmail = responseData['content']['email'];
+
+        UserManager userManager = UserManager();
+        userManager.id = responseData['content']['id'];
+        userManager.email = responseData['content']['email'];
+        userManager.role = responseData['content']['role'];
 
         // Chuyển đến OtpVerificationScreen với id và role
-        Get.to(() => OtpVerificationScreen(userId: userId, userRole: userRole));
+        Get.to(() => OtpVerificationScreen());
       } else {
         print('Failed to check email');
         Get.snackbar('Error', 'Failed to check email: ${response.statusCode}');
