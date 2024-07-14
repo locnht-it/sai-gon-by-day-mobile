@@ -31,7 +31,7 @@ class _TSignupFormState extends State<TSignupForm> {
   final TextEditingController _confirmPasswordController = TextEditingController();
 
   final String _baseUrl = 'https://trip-by-day-backend.onrender.com/api/v1/auth/save-infor';
-   UserManager userManager = UserManager();
+  UserManager userManager = UserManager();
   bool _showPassword = false;
   bool _showConfirmPassword = false;
   Future<void> _signup() async {
@@ -280,5 +280,4 @@ class _TSignupFormState extends State<TSignupForm> {
     );
   }
 }
-
 

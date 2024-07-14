@@ -11,6 +11,7 @@ environment:
 
 #----------------------- PACKAGES -------------------------#
 dependencies:
+  google_sign_in: ^6.2.1
   flutter:
     sdk: flutter
 #  firebase_core: ^3.1.1
