@@ -4,6 +4,7 @@ class UserManager {
   int? _id;
   String? _email;
   String? _role;
+  String? _token;
 
   factory UserManager() {
     return _instance;
@@ -30,5 +31,11 @@ class UserManager {
 
   set role(String? role) {
     _role = role;
+  }
+
+  String? get token => _token;
+
+  set token(String? token){
+    _token = token;
   }
 }
