@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "898134236916-ikatunmj4jn4p53aerg65ekl73fv2nbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.TPP.onedaytrip",
+            "certificate_hash": "3e0a313218eaa2781471c3451e199a5d2f4f9b1e"
+          }
+        },
+        {
           "client_id": "898134236916-k0p076q1g23acvdi7grf3k5bc08ndcta.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

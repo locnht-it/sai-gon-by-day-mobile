@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/fill_infor_signup_google.dart';
 import 'package:http/http.dart' as http;
+import '../../../api/global_variables/user_manage.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
@@ -16,6 +17,7 @@ class TSocialButtons extends StatelessWidget {
   // Initialize FirebaseAuth and GoogleSignIn instances
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
+  UserManager userManager = UserManager();
 
   Future<void> _signInWithGoogle(BuildContext context) async {
     try {
@@ -85,6 +87,12 @@ class TSocialButtons extends StatelessWidget {
               },
             );
 
+            userManager.id = userDTO['id'];
+            userManager.email = userDTO['email'];
+            userManager.role = userDTO['role'];
+            userManager.token = token;
+            // Navigate to the FillInforSignupGoogle page on successful sign-in
+            Get.to(() => FillInforSignupGoogle());
             // Navigate to the FillInforSignupGoogle page on successful sign-in
             //Get.to(() => FillInforSignupGoogle());
           } else {
