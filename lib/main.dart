@@ -1,16 +1,22 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:onedaytrip/api/firebase/firebase_api.dart';
 import 'package:onedaytrip/firebase_options.dart';
-
 import 'app.dart';
 
 final navigatorkey = GlobalKey<NavigatorState>();
 
 void main() async {
 
-  WidgetsFlutterBinding.ensureInitialized();
+
+  // WidgetsFlutterBinding.ensureInitialized();
+
+
+WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   await FirebaseApi().initNotification();
 
   // Todo: Add Widgets Binding
