@@ -19,8 +19,30 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:onedaytrip/api/global_variables/package_manage.dart';
+//
+// Future<List<PackageManage>> fetchPackages() async {
+//   final response = await http.get(
+//     Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-sale?page=1&limit=10"),
+//     headers: {
+//       'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMDk3Mjc0MywiZXhwIjoxNzIxMDU5MTQzfQ.UHTT8j_5jISJ51uulMkXcAtfquWog71ZyilFz53lq-U',
+//     },
+//   );
+//
+//   if (response.statusCode == 200) {
+//     final data = json.decode(response.body);
+//     if (data['content'] != null) {
+//       return (data['content'] as List)
+//           .map((packageJson) => PackageManage.fromJson(packageJson))
+//           .toList();
+//     } else {
+//       throw Exception('Content is null');
+//     }
+//   } else {
+//     throw Exception('Failed to load packages');
+//   }
+// }
 
-Future<List<PackageManage>> fetchPackages() async {
+Future<List<PackageManage>> fetchPackages({List<int>? ids}) async {
   final response = await http.get(
     Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-sale?page=1&limit=10"),
     headers: {
@@ -30,13 +52,16 @@ Future<List<PackageManage>> fetchPackages() async {
 
   if (response.statusCode == 200) {
     final data = json.decode(response.body);
-    if (data['content'] != null) {
-      return (data['content'] as List)
-          .map((packageJson) => PackageManage.fromJson(packageJson))
-          .toList();
-    } else {
-      throw Exception('Content is null');
+    final packages = (data['content'] as List)
+        .map((packageJson) => PackageManage.fromJson(packageJson))
+        .toList();
+
+    // Nếu có ids được cung cấp, lọc gói theo ids
+    if (ids != null && ids.isNotEmpty) {
+      return packages.where((package) => ids.contains(package.id)).toList();
     }
+
+    return packages;
   } else {
     throw Exception('Failed to load packages');
   }
