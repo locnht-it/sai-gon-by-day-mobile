@@ -42,7 +42,7 @@ class _TSignupFormState extends State<TSignupForm> {
     final String password = _passwordController.text;
     final String confirmPassword = _confirmPasswordController.text;
     final String gender = widget.selectedGender.value ?? 'Other';
-    final fcmtoken = TokenManager().fcmToken;
+    final String? fcmtoken = TokenManager().fcmToken;
 
     if (confirmPassword != password) {
       Get.snackbar(
