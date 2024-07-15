@@ -67,7 +67,7 @@ class THomeCategories extends StatelessWidget {
           height: 207,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: packages.length > 3 ? 3 : packages.length,
+            itemCount: packages.length > 2 ? 2 : packages.length,
             itemBuilder: (context, index) {
               final package = packages[index];
               return Padding(

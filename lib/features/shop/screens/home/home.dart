@@ -114,6 +114,26 @@ class HomeScreen extends StatelessWidget {
             ),
 
 
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(
+            //     horizontal: TSizes.defaultSpace,
+            //     vertical: TSizes.defaultSpace / 2,
+            //   ),
+            //   child: Column(
+            //     children: [
+            //       TSectionHeading(
+            //         title: 'Recommended',
+            //         showActionButton: true,
+            //         textColor: Colors.black,
+            //         onPressed: () => Get.to(() => const AllProducts()),
+            //       ),
+            //       THorizontalLayout(
+            //         itemCount: 4,
+            //         itemBuilder: (_, index) => const TProductCardHorizontal(),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: TSizes.defaultSpace,
@@ -127,9 +147,28 @@ class HomeScreen extends StatelessWidget {
                     textColor: Colors.black,
                     onPressed: () => Get.to(() => const AllProducts()),
                   ),
-                  THorizontalLayout(
-                    itemCount: 4,
-                    itemBuilder: (_, index) => const TProductCardHorizontal(),
+                  FutureBuilder<List<PackageManage>>(
+                    future: fetchRecommendedPackages(), // Gọi hàm fetchRecommendedPackages
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(child: CircularProgressIndicator());
+                      } else if (snapshot.hasError) {
+                        return Center(child: Text('Error: ${snapshot.error}'));
+                      } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                        return const Center(child: Text('No recommended packages found'));
+                      }
+
+                      final recommendedPackages = snapshot.data!;
+
+                      return THorizontalLayout(
+                        itemCount: recommendedPackages.length,
+                        itemBuilder: (_, index) => TProductCardHorizontal(
+                          packageName: recommendedPackages[index].packageName,
+                          packageDescription: recommendedPackages[index].packageDescription,
+                          galleryUrls: recommendedPackages[index].galleryUrls,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

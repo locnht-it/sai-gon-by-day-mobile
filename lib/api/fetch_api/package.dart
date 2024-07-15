@@ -99,4 +99,22 @@ Future<List<PackageManage>> fetchNearestPackages() async {
   }
 }
 
+Future<List<PackageManage>> fetchRecommendedPackages() async {
+  final response = await http.get(
+    Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-sale?page=1&limit=10"),
+    headers: {
+      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMDk3Mjc0MywiZXhwIjoxNzIxMDU5MTQzfQ.UHTT8j_5jISJ51uulMkXcAtfquWog71ZyilFz53lq-U',
+    },
+  );
 
+  if (response.statusCode == 200) {
+    final data = json.decode(response.body);
+    final packages = (data['content'] as List)
+        .map((packageJson) => PackageManage.fromJson(packageJson))
+        .toList();
+
+    return packages.where((package) => [5, 6, 7, 8].contains(package.id)).toList();
+  } else {
+    throw Exception('Failed to load packages');
+  }
+}
