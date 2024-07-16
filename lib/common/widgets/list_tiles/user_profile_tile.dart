@@ -17,8 +17,8 @@ class TUserProfileTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: const TCircularImage(image: TImages.user, width: 50, height: 50, padding: 0),
-      title: Text('Nam Le', style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
-      subtitle: Text('support@tpp.com', style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white)),
+      title: Text('Your Account', style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white)),
+      subtitle: Text('See your account in Edit Button', style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white)),
       trailing: IconButton(onPressed: onPressed, icon: const Icon(Iconsax.edit, color: TColors.white)),
     );
   }
