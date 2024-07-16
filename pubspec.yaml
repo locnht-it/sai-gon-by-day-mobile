@@ -41,6 +41,9 @@ dependencies:
   firebase_messaging: ^15.0.3
   uni_links: ^0.5.1
   firebase_auth: ^5.1.2
+  cloud_functions: ^5.0.3
+  googleapis: ^13.2.0
+  googleapis_auth: ^1.6.0
 
 
   # Product Specific

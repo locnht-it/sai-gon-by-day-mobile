@@ -4,8 +4,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:onedaytrip/api/global_variables/user_manage.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/fill_infor_signup_google.dart';
 import 'package:http/http.dart' as http;
+import 'package:onedaytrip/navigation_menu.dart';
 import '../../../api/global_variables/user_manage.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
@@ -58,34 +60,47 @@ class TSocialButtons extends StatelessWidget {
             var responseData = jsonDecode(response.body);
             var userDTO = responseData['content']['userDTO'];
             var token = responseData['content']['token'];
-
-            // Show the response in a dialog
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Sign in successfully'),
-                  content: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      Text('ID: ${userDTO['id']}'),
-                      Text('Full Name: ${userDTO['fullname']}'),
-                      Text('Email: ${userDTO['email']}'),
-                      Text('Role: ${userDTO['role']}'),
-                      Text('Token: $token'),
-                    ],
-                  ),
-                  actions: <Widget>[
-                    TextButton(
-                      child: Text('OK'),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
+            if(!userDTO['fullname'].toString().isEmpty && !userDTO['phone'].toString().isEmpty && !userDTO['address'].toString().isEmpty){
+              userManager.id = userDTO['id'];
+              userManager.email = userDTO['email'];
+              userManager.role = userDTO['role'];
+              userManager.token = token;
+              Get.to(() => NavigationMenu());
+            }else{
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Sign in successfully'),
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        Text('ID: ${userDTO['id']}'),
+                        Text('Full Name: ${userDTO['fullname']}'),
+                        Text('Email: ${userDTO['email']}'),
+                        Text('Role: ${userDTO['role']}'),
+                        Text('Token: $token'),
+                      ],
                     ),
-                  ],
-                );
-              },
-            );
+                    actions: <Widget>[
+                      TextButton(
+                        child: Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+              userManager.id = userDTO['id'];
+              userManager.email = userDTO['email'];
+              userManager.role = userDTO['role'];
+              userManager.token = token;
+              // Navigate to the FillInforSignupGoogle page on successful sign-in
+              Get.to(() => FillInforSignupGoogle());
+            }
+            // Show the response in a dialog
 
             userManager.id = userDTO['id'];
             userManager.email = userDTO['email'];
