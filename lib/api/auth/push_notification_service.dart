@@ -48,7 +48,7 @@ class PushNotificationService{
     return credentials.accessToken.data;
 
   }
-  static sendNotificationToSelectedDrived(String deviceToken, BuildContext context) async{
+  static sendNotificationToSelectedDrived(String? deviceToken, BuildContext context, String title, String body) async{
 
     final String serverAccessTokenKey = await getAccessToken();
     if (serverAccessTokenKey == null) {
@@ -76,8 +76,8 @@ class PushNotificationService{
       "message":{
         "token": deviceToken,
         "notification":{
-          "body":"This is an FCM notification message!",
-          "title":"FCM Message"
+          "body":body,
+          "title":title
         }
       }
     };

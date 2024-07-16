@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/api/auth/push_notification_service.dart';
+import 'package:onedaytrip/api/global_variables/fcm_token_manage.dart';
 import 'package:onedaytrip/api/global_variables/user_manage.dart';
 import 'package:onedaytrip/api/request/sign_in_request.dart';
 import 'package:onedaytrip/features/authentication/screens/password_configuration/forget_password.dart';
@@ -53,13 +54,13 @@ class _TLoginFormState extends State<TLoginForm> {
         userManager.email = userDTO['email'];
         userManager.role = userDTO['role'];
         userManager.token = token;
-        String fcmToken = userDTO['fcmtoken'];
+        String? fcmToken = TokenManager().fcmToken;
 
         // Send notification using PushNotificationService
-        await PushNotificationService.sendNotificationToSelectedDrived(
-          fcmToken,
-          context
-        );
+        // await PushNotificationService.sendNotificationToSelectedDrived(
+        //   fcmToken,
+        //   context
+        // );
 
 
         // Hiển thị dialog hoặc thực hiện hành động phù hợp sau khi đăng nhập thành công
