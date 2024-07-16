@@ -8,7 +8,16 @@ import 'package:onedaytrip/utils/constants/sizes.dart';
 import '../../../styles/shadows.dart';
 
 class TProductCardHorizontal extends StatelessWidget {
-  const TProductCardHorizontal({super.key});
+  final String packageName;
+  final String packageDescription;
+  final List<String> galleryUrls;
+
+  const TProductCardHorizontal({
+    super.key,
+    required this.packageName,
+    required this.packageDescription,
+    required this.galleryUrls,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,65 +31,60 @@ class TProductCardHorizontal extends StatelessWidget {
             borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
             boxShadow: [TShadowStyle.verticalProductShadow],
           ),
-          child:
-          // ListTile(
-          //   contentPadding: const EdgeInsets.symmetric(
-          //       vertical: TSizes.lg / 7, horizontal: TSizes.lg / 2),
-          //   leading: ClipRRect(
-          //     borderRadius: BorderRadius.circular(TSizes.cardRadiusSm),
-          //     child: const Image(
-          //       image: AssetImage(TImages.australia), // Đường dẫn hình ảnh thật
-          //       fit: BoxFit.cover,
-          //     ),
-          //   ),
-          //   title: const Text('Australia'),
-          //   subtitle: const Row(
-          //     children: [
-          //       Icon(Iconsax.location, color: TColors.grey),
-          //       SizedBox(width: 4), // Khoảng cách giữa icon và văn bản
-          //       Text('Sydney, Australia'),
-          //     ],
-          //   ),
-          //   trailing: const Row(
-          //     mainAxisSize: MainAxisSize.min,
-          //     children: [
-          //       Icon(Iconsax.star, color: Colors.amber, size: TSizes.iconSm),
-          //       Text('4.5'),
-          //     ],
-          //   ),
-          // ),
-          ListTile(
+          child: ListTile(
             contentPadding: const EdgeInsets.symmetric(vertical: TSizes.lg / 7, horizontal: TSizes.lg / 2),
             leading: SizedBox(
-              width: 70, // Adjust width according to your image size or design requirements
-              height: 60, // Adjust height if needed
+              width: 70,
+              height: 60,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(TSizes.cardRadiusSm),
-                child: const
-                Image(
-                  // image: AssetImage(TImages.australia),
-                  image: AssetImage('assets/images/places/australia.png'),
+                child: Image.network(
+                  galleryUrls.isNotEmpty ? galleryUrls[0] : 'assets/images/places/australia.png',
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            title: const Text('Australia'),
-            subtitle: const Row(
+            // title: Text(packageName),
+            // subtitle: Row(
+            //   children: [
+            //     const Icon(Iconsax.location, color: TColors.grey),
+            //     const SizedBox(width: 4),
+            //     Expanded(child: Text(packageDescription, overflow: TextOverflow.ellipsis)),
+            //   ],
+            // ),
+
+            title:
+            Text(
+              'Việt Nam Quê Hương',
+              style: TextStyle(
+                fontFamily: 'Roboto',
+              ),
+            ),
+
+
+              subtitle: Row(
               children: [
-                Icon(Iconsax.location, color: TColors.grey),
-                const SizedBox(width: 4), // Spacing between icon and text
-                const Text('Sydney, Australia'),
+                const Icon(Iconsax.location, color: TColors.grey),
+                const SizedBox(width: 4),
+                Expanded(
+                  child: Text(
+                    packageDescription,
+                    style: const TextStyle(fontFamily: 'Poppins'),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
               ],
             ),
-            trailing: const Row(
+
+            trailing: Row(
               mainAxisSize: MainAxisSize.min,
-              children: [
+              children: const [
                 Icon(Iconsax.star, color: Colors.amber, size: TSizes.iconSm),
-                const Text('4.5'),
+                SizedBox(width: 4),
+                Text('4.5'),
               ],
             ),
           ),
-
         ),
       ),
     );

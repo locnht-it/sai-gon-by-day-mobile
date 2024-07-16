@@ -8,6 +8,7 @@ import 'package:onedaytrip/api/global_variables/user_manage.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/fill_infor_signup_google.dart';
 import 'package:http/http.dart' as http;
 import 'package:onedaytrip/navigation_menu.dart';
+import '../../../api/global_variables/user_manage.dart';
 import '../../../utils/constants/colors.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
@@ -101,6 +102,14 @@ class TSocialButtons extends StatelessWidget {
             }
             // Show the response in a dialog
 
+            userManager.id = userDTO['id'];
+            userManager.email = userDTO['email'];
+            userManager.role = userDTO['role'];
+            userManager.token = token;
+            // Navigate to the FillInforSignupGoogle page on successful sign-in
+            Get.to(() => FillInforSignupGoogle());
+            // Navigate to the FillInforSignupGoogle page on successful sign-in
+            //Get.to(() => FillInforSignupGoogle());
           } else {
             // Show an error dialog if the API call was unsuccessful
             showDialog(
