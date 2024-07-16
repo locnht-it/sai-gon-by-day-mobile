@@ -8,6 +8,7 @@ import 'package:onedaytrip/api/global_variables/user_manage.dart';
 import 'package:onedaytrip/features/shop/screens/home/home.dart';
 import 'package:onedaytrip/navigation_menu.dart';
 import 'package:http/http.dart' as http;
+import '../../../../../api/auth/push_notification_service.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
 
@@ -56,7 +57,7 @@ class TFillInfoSignUpGoogleFormState extends State<TFillInfoSignUpGoogleForm> {
       'phone': phone,
       'address': address,
       'gender': gender.toUpperCase(),
-      'FCMToken': fcmtoken, // Thay thế bằng FCM token thực tế của bạn
+      'FCMToken': fcmtoken,
     };
 
     print("Đây là data aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa: $data");
@@ -80,6 +81,14 @@ class TFillInfoSignUpGoogleFormState extends State<TFillInfoSignUpGoogleForm> {
       print('Response Body: ${response.body}');
 
       if (response.statusCode == 201) {
+        String body = "Save information successfully. Please login !!";
+        String title = "Save Successfully.";
+        await PushNotificationService.sendNotificationToSelectedDrived(
+            fcmtoken,
+            context,
+            title,
+            body
+        );
         //Get.to(() => const NavigationMenu());
         showDialog(
           context: context,

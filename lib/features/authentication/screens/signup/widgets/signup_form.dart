@@ -7,6 +7,7 @@ import 'package:onedaytrip/api/global_variables/user_manage.dart';
 import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/features/authentication/screens/signup/verify_email.dart';
 import 'package:http/http.dart' as http;
+import '../../../../../api/auth/push_notification_service.dart';
 import '../../../../../api/global_variables/fcm_token_manage.dart';
 import '../../../../../utils/constants/sizes.dart';
 import '../../../../../utils/constants/text_strings.dart';
@@ -95,8 +96,16 @@ class _TSignupFormState extends State<TSignupForm> {
 
       print('Response Status Code: ${response.statusCode}');
       print('Response Body: ${response.body}');
-
+      String? fcmToken = TokenManager().fcmToken;
       if (response.statusCode == 201) {
+        String body = "Save information successfully. Please login !!";
+        String title = "Save Successfully.";
+        await PushNotificationService.sendNotificationToSelectedDrived(
+            fcmToken,
+            context,
+            title,
+            body
+        );
         Get.to(() => const LoginScreen());
         // showDialog(
         //   context: context,
