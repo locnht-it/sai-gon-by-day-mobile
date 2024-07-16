@@ -19,6 +19,8 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:onedaytrip/api/global_variables/package_manage.dart';
+
+import '../global_variables/user_manage.dart';
 //
 // Future<List<PackageManage>> fetchPackages() async {
 //   final response = await http.get(
@@ -42,13 +44,15 @@ import 'package:onedaytrip/api/global_variables/package_manage.dart';
 //   }
 // }
 
+final String? token = UserManager().token;
 
 
 Future<List<PackageManage>> fetchPackages({List<int>? ids}) async {
   final response = await http.get(
     Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-sale?page=1&limit=10"),
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      'Authorization': 'Bearer ${token}',
     },
   );
 
@@ -86,7 +90,8 @@ Future<List<PackageManage>> fetchNearestPackages() async {
   final response = await http.get(
     Uri.parse('https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-sale?page=1&limit=10'),
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      'Authorization': 'Bearer ${token}',
     },
   );
 
@@ -105,7 +110,8 @@ Future<List<PackageManage>> fetchRecommendedPackages() async {
   final response = await http.get(
     Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-sale?page=1&limit=10"),
     headers: {
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      'Authorization': 'Bearer ${token}',
     },
   );
 
@@ -131,7 +137,8 @@ Future<List<dynamic>> searchPackages(String packageName) async {
     Uri.parse('$baseUrl/api/v1/package-in-day/find-all-search'),
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      'Authorization': 'Bearer ${token}',
     },
     body: jsonEncode({'packageName': packageName}),
   );
@@ -152,7 +159,8 @@ Future<List<PackageManage>> fetchPackagesByName(String packageName) async {
     Uri.parse('https://trip-by-day-backend.onrender.com/api/v1/package-in-day/find-all-search'),
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      // 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYW1AZ21haWwuY29tIiwicm9sZXMiOiJDVVNUT01FUiIsImlhdCI6MTcyMTA2MDA1MCwiZXhwIjoxNzIxMTQ2NDUwfQ.pf1w9oMfF289rCeAVEbqBpe26egYObSLmLSm0CefQi4',
+      'Authorization': 'Bearer ${token}',
     },
     body: jsonEncode({'packageName': packageName}),
   );
@@ -236,4 +244,7 @@ Future<List<String>> fetchCities() async {
     throw Exception('Failed to load cities');
   }
 }
+
+
+
 

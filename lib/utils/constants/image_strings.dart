@@ -50,6 +50,7 @@ class TImages {
   static const String successfulPayment = "assets/icons/payment_methods/successful_payment.png";
   static const String paymentSuccess = "assets/icons/payment_methods/payment_success.gif";
   static const String visa = "assets/icons/payment_methods/visa.png";
+  static const String qrCode = "assets/icons/payment_methods/qr_code.jpg";
 
   // -- Banners
   static const String lima = "assets/images/banner/lima.png";

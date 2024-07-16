@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onedaytrip/common/widgets/appbar/appbar.dart';
 import 'package:onedaytrip/common/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:onedaytrip/common/widgets/products/cart/cart_item.dart';
 import 'package:onedaytrip/common/widgets/success_screen/success_screen.dart';
 import 'package:onedaytrip/features/shop/screens/cart/widget/cart_items.dart';
 import 'package:onedaytrip/features/shop/screens/checkout/widgets/billing_address_section.dart';
@@ -13,6 +14,7 @@ import 'package:onedaytrip/utils/constants/image_strings.dart';
 import 'package:onedaytrip/utils/constants/sizes.dart';
 import 'package:onedaytrip/utils/helpers/helper_functions.dart';
 
+import '../../../../api/global_variables/user_manage.dart';
 import '../../../../common/widgets/products/cart/coupon_widget.dart';
 
 class CheckoutScreen extends StatelessWidget {
@@ -20,6 +22,7 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userId = UserManager().id.toString();
     final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: TAppBar(
@@ -32,7 +35,7 @@ class CheckoutScreen extends StatelessWidget {
           child: Column(
             children: [
               /// -- Items in Cart
-              TCartItems(showAddRemoveButtons: false),
+              TCartItem(),
               SizedBox(height: TSizes.spaceBtwSections),
 
               // /// -- Coupon TextField
@@ -46,13 +49,13 @@ class CheckoutScreen extends StatelessWidget {
                 backgroundColor: dark ? TColors.black : TColors.white,
                 child: const Column(
                   children: [
-                    /// Pricing
-                    TBillingAmountSection(),
-                    SizedBox(height: TSizes.spaceBtwItems),
-
-                    /// Divider
-                    Divider(),
-                    SizedBox(height: TSizes.spaceBtwItems),
+                    // /// Pricing
+                    // TBillingAmountSection(),
+                    // SizedBox(height: TSizes.spaceBtwItems),
+                    //
+                    // /// Divider
+                    // Divider(),
+                    // SizedBox(height: TSizes.spaceBtwItems),
 
                     /// Payment Methods
                     TBillingPaymentSection(),

@@ -471,6 +471,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 return TGridLayout(
                   itemCount: searchPackages.length,
                   itemBuilder: (_, index) => TProductCardVertical(
+                    packageId: searchPackages[index].id,
                     packageName: searchPackages[index].packageName,
                     packageDescription: searchPackages[index].packageDescription,
                     price: searchPackages[index].price.toString(),
@@ -525,6 +526,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return TGridLayout(
                         itemCount: nearestPackages.length,
                         itemBuilder: (_, index) => TProductCardVertical(
+                          packageId: nearestPackages[index].id,
                           packageName: nearestPackages[index].packageName,
                           packageDescription: nearestPackages[index].packageDescription,
                           price: nearestPackages[index].price.toString(),
@@ -565,6 +567,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       return THorizontalLayout(
                         itemCount: recommendedPackages.length,
                         itemBuilder: (_, index) => TProductCardHorizontal(
+                          packageId: recommendedPackages[index].id,
                           packageName: recommendedPackages[index].packageName,
                           packageDescription: recommendedPackages[index].packageDescription,
                           galleryUrls: recommendedPackages[index].galleryUrls,

@@ -46,7 +46,7 @@ class TBillingPaymentSection extends StatelessWidget {
       children: [
         TSectionHeading(
           title: 'Payment Method',
-          buttonTitle: 'See All',
+          buttonTitle: 'Payment Information',
           onPressed: () {
             showDialog(
               context: context,
@@ -63,18 +63,26 @@ class TBillingPaymentSection extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Nội dung chuyển khoản',
+                        'Nội dung chuyển khoản: \nSDT_HoVaTen',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18, // Increase the font size as needed
                         ),
                       ),
                       SizedBox(height: 10),
-                      Text('STK: 0312341934234', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
-                      SizedBox(height: 10),
-                      Text('Người nhận: Namlee Entertainment', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
-                      SizedBox(height: 10),
-                      Text('Vietcombank - Ngân hàng thương mại cổ phần Ngoại thương Việt Nam', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                      // Text('STK: 0312341934234', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),),
+                      // SizedBox(height: 10),
+                      // Text('Người nhận: Namlee Entertainment', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                      // SizedBox(height: 10),
+                      // Text('Vietcombank - Ngân hàng thương mại cổ phần Ngoại thương Việt Nam', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                      // SizedBox(height: 10),
+                      // Thêm hình ảnh QR Code
+                      Image.asset(
+                        TImages.qrCode,
+                        height: 250,
+                        width: 250,
+                        fit: BoxFit.cover,
+                      ),
                     ],
                   ),
                   actions: [
@@ -82,7 +90,7 @@ class TBillingPaymentSection extends StatelessWidget {
                       onPressed: () {
                         Navigator.of(context).pop();
                       },
-                      child: Text('Đóng'),
+                      child: Text('Close'),
                     ),
                   ],
                 );
@@ -100,7 +108,9 @@ class TBillingPaymentSection extends StatelessWidget {
               padding: const EdgeInsets.all(TSizes.sm),
               child: const Image(
                 image: AssetImage(TImages.domesticTransfer),
-                fit: BoxFit.contain,
+                width: 100,
+                height: 100,
+                // fit: BoxFit.contain,
               ),
             ),
             const SizedBox(width: TSizes.spaceBtwItems / 2),

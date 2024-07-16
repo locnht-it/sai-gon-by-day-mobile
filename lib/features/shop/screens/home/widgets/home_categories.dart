@@ -45,6 +45,62 @@ import 'home_category_items.dart';
 // }
 
 
+// class THomeCategories extends StatelessWidget {
+//   const THomeCategories({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return FutureBuilder<List<PackageManage>>(
+//       future: fetchPackages(),
+//       builder: (context, snapshot) {
+//         if (snapshot.connectionState == ConnectionState.waiting) {
+//           return const Center(child: CircularProgressIndicator());
+//         } else if (snapshot.hasError) {
+//           return Center(child: Text('Error: ${snapshot.error}'));
+//         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+//           return const Center(child: Text('No packages found'));
+//         }
+//
+//         final packages = snapshot.data!;
+//
+//         return SizedBox(
+//           height: 207,
+//           child: ListView.builder(
+//             scrollDirection: Axis.horizontal,
+//             itemCount: packages.length > 2 ? 2 : packages.length,
+//             itemBuilder: (context, index) {
+//               final package = packages[index];
+//               return Padding(
+//                 padding: const EdgeInsets.only(right: 16),
+//                 child: GestureDetector(
+//                   onTap: () => Get.to(() => const ProductDetailScreen()),
+//                   // child: THomeCategoryItem(
+//                   //   image: package.galleryUrls.isNotEmpty
+//                   //       ? package.galleryUrls[0]
+//                   //       : TImages.semeruMountain, // Sử dụng một ảnh mặc định nếu không có ảnh
+//                   //   title: package.packageName,
+//                   //   location: package.packageDescription,
+//                   //   rating: 4.8, // Nếu cần, bạn có thể thay đổi logic để lấy rating thực tế
+//                   // ),
+//                   child: THomeCategoryItem(
+//                     image: package.galleryUrls.isNotEmpty
+//                         ? package.galleryUrls[0] // Giữ nguyên URL hình ảnh
+//                         : TImages.semeruMountain, // Sử dụng một ảnh mặc định nếu không có ảnh
+//                     title: package.packageName,
+//                     location: package.packageDescription,
+//                     rating: 4.8, // Có thể thay đổi logic để lấy rating thực tế
+//                   ),
+//
+//                 ),
+//               );
+//             },
+//           ),
+//         );
+//       },
+//     );
+//   }
+// }
+
 class THomeCategories extends StatelessWidget {
   const THomeCategories({super.key});
 
@@ -73,24 +129,15 @@ class THomeCategories extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(right: 16),
                 child: GestureDetector(
-                  onTap: () => Get.to(() => const ProductDetailScreen()),
-                  // child: THomeCategoryItem(
-                  //   image: package.galleryUrls.isNotEmpty
-                  //       ? package.galleryUrls[0]
-                  //       : TImages.semeruMountain, // Sử dụng một ảnh mặc định nếu không có ảnh
-                  //   title: package.packageName,
-                  //   location: package.packageDescription,
-                  //   rating: 4.8, // Nếu cần, bạn có thể thay đổi logic để lấy rating thực tế
-                  // ),
+                  onTap: () => Get.to(() => ProductDetailScreen(packageId: package.id)), // Truyền packageId tại đây
                   child: THomeCategoryItem(
                     image: package.galleryUrls.isNotEmpty
-                        ? package.galleryUrls[0] // Giữ nguyên URL hình ảnh
-                        : TImages.semeruMountain, // Sử dụng một ảnh mặc định nếu không có ảnh
+                        ? package.galleryUrls[0]
+                        : TImages.semeruMountain,
                     title: package.packageName,
                     location: package.packageDescription,
-                    rating: 4.8, // Có thể thay đổi logic để lấy rating thực tế
+                    rating: 4.8,
                   ),
-
                 ),
               );
             },
