@@ -60,54 +60,59 @@ class TSocialButtons extends StatelessWidget {
             var responseData = jsonDecode(response.body);
             var userDTO = responseData['content']['userDTO'];
             var token = responseData['content']['token'];
-            if(!userDTO['fullname'].toString().isEmpty && !userDTO['phone'].toString().isEmpty && !userDTO['address'].toString().isEmpty){
+            print("00000000000000000000000000000000000000000000000000000000000000000000000000000${userDTO['fullname']}");
+            if(userDTO['fullname'] != null ){
               userManager.id = userDTO['id'];
               userManager.email = userDTO['email'];
               userManager.role = userDTO['role'];
               userManager.token = token;
               Get.to(() => NavigationMenu());
             }else{
-              showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return AlertDialog(
-                    title: Text('Sign in successfully'),
-                    content: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Text('ID: ${userDTO['id']}'),
-                        Text('Full Name: ${userDTO['fullname']}'),
-                        Text('Email: ${userDTO['email']}'),
-                        Text('Role: ${userDTO['role']}'),
-                        Text('Token: $token'),
-                      ],
-                    ),
-                    actions: <Widget>[
-                      TextButton(
-                        child: Text('OK'),
-                        onPressed: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ],
-                  );
-                },
-              );
               userManager.id = userDTO['id'];
               userManager.email = userDTO['email'];
               userManager.role = userDTO['role'];
               userManager.token = token;
+              // showDialog(
+              //   context: context,
+              //   builder: (BuildContext context) {
+              //     return AlertDialog(
+              //       title: Text('Sign in successfully'),
+              //       content: Column(
+              //         mainAxisSize: MainAxisSize.min,
+              //         children: <Widget>[
+              //           Text('ID: ${userDTO['id']}'),
+              //           Text('Full Name: ${userDTO['fullname']}'),
+              //           Text('Email: ${userDTO['email']}'),
+              //           Text('Role: ${userDTO['role']}'),
+              //           Text('Token: $token'),
+              //         ],
+              //       ),
+              //       actions: <Widget>[
+              //         TextButton(
+              //           child: Text('OK'),
+              //           onPressed: () {
+              //             Navigator.of(context).pop();
+              //           },
+              //         ),
+              //       ],
+              //     );
+              //   },
+              // );
+              // userManager.id = userDTO['id'];
+              // userManager.email = userDTO['email'];
+              // userManager.role = userDTO['role'];
+              // userManager.token = token;
               // Navigate to the FillInforSignupGoogle page on successful sign-in
               Get.to(() => FillInforSignupGoogle());
             }
             // Show the response in a dialog
 
-            userManager.id = userDTO['id'];
-            userManager.email = userDTO['email'];
-            userManager.role = userDTO['role'];
-            userManager.token = token;
-            // Navigate to the FillInforSignupGoogle page on successful sign-in
-            Get.to(() => FillInforSignupGoogle());
+            // userManager.id = userDTO['id'];
+            // userManager.email = userDTO['email'];
+            // userManager.role = userDTO['role'];
+            // userManager.token = token;
+            // // Navigate to the FillInforSignupGoogle page on successful sign-in
+            // Get.to(() => FillInforSignupGoogle());
             // Navigate to the FillInforSignupGoogle page on successful sign-in
             //Get.to(() => FillInforSignupGoogle());
           } else {

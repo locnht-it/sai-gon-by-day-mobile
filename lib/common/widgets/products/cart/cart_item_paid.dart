@@ -12,10 +12,10 @@ import '../../images/t_rounded_image.dart';
 import '../../texts/product_price_text.dart';
 import '../../texts/product_title_text.dart';
 import '../../texts/t_brand_title_text_with_verified_icon.dart';
-class TCartItem extends StatelessWidget {
-  const TCartItem({super.key});
+class TCartItemPaid extends StatelessWidget {
+  const TCartItemPaid({super.key});
 
-  Future<Map<String, dynamic>> fetchCartItem() async {
+  Future<Map<String, dynamic>> fetchCartItemConfirm() async {
     final int? userId = UserManager().id;
     final String? token = UserManager().token;
 
@@ -24,7 +24,7 @@ class TCartItem extends StatelessWidget {
     }
 
     final response = await http.post(
-      Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/order/find-all-sale-for-user/$userId?page=1&limit=10"),
+      Uri.parse("https://trip-by-day-backend.onrender.com/api/v1/order/find-all-confirm-for-user/$userId?page=1&limit=10"),
       headers: {
         'Authorization': 'Bearer $token',
       },
@@ -53,7 +53,7 @@ class TCartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<Map<String, dynamic>>(
-      future: fetchCartItem(),
+      future: fetchCartItemConfirm(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());

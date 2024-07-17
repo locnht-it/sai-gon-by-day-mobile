@@ -214,7 +214,7 @@ class _BottomNavigationBarSectionState extends State<BottomNavigationBarSection>
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            '\$$price / package',
+            '\$$price',
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
