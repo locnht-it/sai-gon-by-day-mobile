@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:onedaytrip/api/global_variables/fcm_token_manage.dart';
 import 'package:onedaytrip/api/global_variables/user_manage.dart';
+import 'package:onedaytrip/features/authentication/screens/login/login.dart';
 import 'package:onedaytrip/features/shop/screens/home/home.dart';
 import 'package:onedaytrip/navigation_menu.dart';
 import 'package:http/http.dart' as http;
@@ -81,8 +82,15 @@ class TFillInfoSignUpGoogleFormState extends State<TFillInfoSignUpGoogleForm> {
       print('Response Body: ${response.body}');
 
       if (response.statusCode == 201) {
+        // var responseData = jsonDecode(response.body);
+        // var userDTO = responseData['content']['userDTO'];
+        // var token = responseData['content']['token'];
+        // userManager.id = userDTO['id'];
+        // userManager.email = userDTO['email'];
+        // userManager.role = userDTO['role'];
+        // userManager.token = token;
         String body = "Save information successfully. Please login !!";
-        String title = "Save Successfully.";
+        String title = "Create Successfully.";
         await PushNotificationService.sendNotificationToSelectedDrived(
             fcmtoken,
             context,
@@ -90,35 +98,36 @@ class TFillInfoSignUpGoogleFormState extends State<TFillInfoSignUpGoogleForm> {
             body
         );
         //Get.to(() => const NavigationMenu());
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              title: const Text('Sign Up Successful'),
-              content: SingleChildScrollView(
-                child: ListBody(
-                  children: <Widget>[
-                    Text('Email: '),
-                    Text('Full Name: $fullname'),
-                    Text('Phone: $phone'),
-                    Text('Address: $address'),
-                    Text('Gender: $gender'),
-                    Text('FCM Token: $fcmtoken'),
-                  ],
-                ),
-              ),
-              actions: <Widget>[
-                TextButton(
-                  child: const Text('OK'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                    //Get.to(() => const LoginScreen());
-                  },
-                ),
-              ],
-            );
-          },
-        );
+        // showDialog(
+        //   context: context,
+        //   builder: (BuildContext context) {
+        //     return AlertDialog(
+        //       title: const Text('Sign Up Successful'),
+        //       content: SingleChildScrollView(
+        //         child: ListBody(
+        //           children: <Widget>[
+        //             Text('Email: '),
+        //             Text('Full Name: $fullname'),
+        //             Text('Phone: $phone'),
+        //             Text('Address: $address'),
+        //             Text('Gender: $gender'),
+        //             Text('FCM Token: $fcmtoken'),
+        //           ],
+        //         ),
+        //       ),
+        //       actions: <Widget>[
+        //         TextButton(
+        //           child: const Text('OK'),
+        //           onPressed: () {
+        //             Navigator.of(context).pop();
+
+                     Get.to(() => const LoginScreen());
+        //           },
+        //         ),
+        //       ],
+        //     );
+        //   },
+        // );
       } else {
         // Xử lý khi API thất bại
         Get.snackbar('Error', 'Failed to sign up: ${response.statusCode}');
